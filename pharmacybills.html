@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Bill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: skyblue;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .container {
+            margin: 20px auto;
+            max-width: 800px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: skyblue;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f4f4f9;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        .total {
+            text-align: right;
+            padding-right: 12px;
+            font-weight: bold;
+        }
+
+        .notification {
+            display: none;
+            padding: 10px;
+            background-color: lightcoral;
+            color: white;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            border-radius: 5px;
+        }
+
+        input[type="time"] {
+            margin: 10px 0;
+            padding: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: skyblue;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: skyblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pharmacy Bill</h1>
+    </header>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Medicine Name</th>
+                    <th>Dosage</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Paracetamol</td>
+                    <td>500mg, 3 times a day</td>
+                    <td>$5</td>
+                </tr>
+                <tr>
+                    <td>Amoxicillin</td>
+                    <td>250mg, twice a day</td>
+                    <td>$12</td>
+                </tr>
+                <tr>
+                    <td>Ibuprofen</td>
+                    <td>200mg, once a day</td>
+                    <td>$8</td>
+                </tr>
+                <tr>
+                    <td>Cough Syrup</td>
+                    <td>10ml, 3 times a day</td>
+                    <td>$6</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="total">Total</td>
+                    <td></td>
+                    <td>$31</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <label for="reminder-time">Set Reminder Time for Medicine:</label>
+        <input type="time" id="reminder-time" name="reminder-time">
+        <button onclick="setReminder()">Set Reminder</button>
+
+        <div class="notification" id="reminder-notification">It's time to take your medicine!</div>
+    </div>
+
+    <footer>
+        &copy; 2025 Pharmacy. All rights reserved.
+    </footer>
+
+    <script>
+        function setReminder() {
+            const reminderTime = document.getElementById('reminder-time').value;
+            if (!reminderTime) {
+                alert("Please set a valid time.");
+                return;
+            }
+
+            // Get hours and minutes from the input time
+            const [hours, minutes] = reminderTime.split(':');
+            const now = new Date();
+            const reminderDate = new Date(now);
+            reminderDate.setHours(hours, minutes, 0, 0);
+
+            // If the reminder time is in the past, set it for the next day
+            if (reminderDate < now) {
+                reminderDate.setDate(reminderDate.getDate() + 1); // Set to the next day
+            }
+
+            // Calculate the difference in time between now and the reminder time
+            const timeDifference = reminderDate.getTime() - now.getTime();
+
+            // Set the pop-up reminder notification to show at the set time
+            setTimeout(function() {
+                document.getElementById('reminder-notification').style.display = 'block';
+                setTimeout(function() {
+                    document.getElementById('reminder-notification').style.display = 'none';
+                }, 5000); // Hide the notification after 5 seconds
+            }, timeDifference);
+
+            alert("Reminder set for " + reminderTime);
+        }
+    </script>
+</body>
+</html>

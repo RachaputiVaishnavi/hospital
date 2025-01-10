@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Medical History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: skyblue;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .container {
+            margin: 20px auto;
+            max-width: 800px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: skyblue;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Patient Medical History</h1>
+    </header>
+
+    <div class="container">
+        <h2>Edit Patient Details</h2>
+        <form id="medical-history-form">
+            <div class="form-group">
+                <label for="patient-name">Patient Name</label>
+                <input type="text" id="patient-name" name="patientName" placeholder="Enter patient name">
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" placeholder="Enter age">
+            </div>
+            <div class="form-group">
+                <label for="conditions">Medical Conditions</label>
+                <textarea id="conditions" name="conditions" rows="4" placeholder="Enter medical conditions"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="medications">Medications</label>
+                <textarea id="medications" name="medications" rows="4" placeholder="Enter medications"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="allergies">Allergies</label>
+                <textarea id="allergies" name="allergies" rows="4" placeholder="Enter allergies"></textarea>
+            </div>
+            <button type="button" onclick="saveDetails()">Save Details</button>
+        </form>
+
+        <h2>Patient History</h2>
+        <table id="patient-history-table">
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td id="history-name">N/A</td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td id="history-age">N/A</td>
+                </tr>
+                <tr>
+                    <td>Medical Conditions</td>
+                    <td id="history-conditions">N/A</td>
+                </tr>
+                <tr>
+                    <td>Medications</td>
+                    <td id="history-medications">N/A</td>
+                </tr>
+                <tr>
+                    <td>Allergies</td>
+                    <td id="history-allergies">N/A</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function saveDetails() {
+            const name = document.getElementById('patient-name').value;
+            const age = document.getElementById('age').value;
+            const conditions = document.getElementById('conditions').value;
+            const medications = document.getElementById('medications').value;
+            const allergies = document.getElementById('allergies').value;
+
+            document.getElementById('history-name').innerText = name || 'N/A';
+            document.getElementById('history-age').innerText = age || 'N/A';
+            document.getElementById('history-conditions').innerText = conditions || 'N/A';
+            document.getElementById('history-medications').innerText = medications || 'N/A';
+            document.getElementById('history-allergies').innerText = allergies || 'N/A';
+
+            alert('Patient details updated successfully!');
+        }
+    </script>
+</body>
+</html>

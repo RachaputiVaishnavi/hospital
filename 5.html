@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+    position: relative;
+    background-color: skyblue;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; /* Use viewport height to cover the entire screen */
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: center; /* Center items vertically */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.text {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    padding: 20px;
+    width:190px;
+    max-width: 50%; /* Limit width to avoid overflowing */
+    margin: 0 auto; /* Center horizontally */
+    transition: transform 0.3s, opacity 0.3s; /* Add transitions */
+}
+
+.text:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    opacity: 0.9; /* Slightly reduce opacity on hover */
+}
+
+.image-box {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    padding: 10px;
+    height:300px;
+    width:200px;
+    max-width: 200px; /* Set max-width for each image box */
+    margin: 10px; /* Add margin for spacing between image boxes */
+    transition: transform 0.3s, opacity 0.3s; /* Add transitions */
+}
+
+.image-box:hover {
+    transform: scale(1.1); /* Enlarge slightly on hover */
+    opacity: 0.8; /* Reduce opacity slightly on hover */
+}
+
+.image-box img {
+    max-width: 100%; /* Ensure images fit within their container */
+    width:150px;
+    height: 200px; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below images */
+    margin-bottom: 10px; /* Add spacing below images */
+}
+</style>
+
+</head>
+<body>
+    
+<div class="container">
+    
+    <div class="text">
+        <!-- Your text content goes here -->
+        <h1>Welcome to Our Gynecologists Specialists</h1>
+        <p>For Further Info Visit Main Page</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://img.freepik.com/free-photo/portrait-handsome-doctor-with-briefcase_329181-603.jpg" alt="FLOWERS">
+        <p>Dr.koushik</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://img.freepik.com/premium-photo/doctor-full-length-isolated-white_53419-2865.jpg" alt="LAMPS">
+        <p>Dr.Leon</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://media.istockphoto.com/id/489339044/photo/trust-me-with-your-health.jpg?s=612x612&w=0&k=20&c=jwx31jv4nzUHN2ABmWjavFWEF1B6HzE25ROO2WHkmVs=" alt="WALL DECOR">
+        <p>Dr.Ram madhav</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-yvu6yv5XQs2uhB3BMBHPaxYYbuKr_Iafzg&s" alt="CLOCKS">
+        <p>Dr.Vyshu</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://media.istockphoto.com/id/526255929/photo/female-doctor-holding-a-digital-tablet.jpg?s=612x612&w=0&k=20&c=iirExCuFAh-EVd3Uc_XK0hOIuBYEIdmOkm4SAGT9jhE=" alt="IDOLS">
+        <p>Dr.Shanthi</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://www.shutterstock.com/image-photo/full-length-portrait-happy-female-260nw-147797591.jpg" alt="FRAMES">
+        <p>Dr.Grey</p>
+    </div>
+</div>
+</body>
+</html>

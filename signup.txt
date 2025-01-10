@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Account Creation</title>
+	<style>
+	.leftHalf {
+	  width: 40%;
+	  padding: 20px;
+	  background-color: #fff;
+	  border-right: 1px solid #ddd;
+	}
+
+	.rightHalf {
+	  width: 60%;
+	  padding: 20px;
+	  background-color: #fff;
+	}
+
+	.bigText {
+	  font-size: 36px;
+	  font-weight: bold;
+	  margin-bottom: 20px;
+	}
+
+	.logParag {
+	  font-size: 18px;
+	  margin-bottom: 40px;
+	}
+
+	.logParag a {
+	  text-decoration: none;
+	  color: #337ab7;
+	}
+
+	.logParag a:hover {
+	  color: #23527c;
+	}
+
+	#modal-signup {
+	  width: 100%;
+	  padding: 20px;
+	}
+
+	.modal-content {
+	  background-color: #fff;
+	  padding: 20px;
+	  border: 1px solid #ddd;
+	  border-radius: 10px;
+	  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.modal-content h4 {
+	  margin-top: 0;
+	}
+
+	.input-field {
+	  margin-bottom: 20px;
+	}
+
+	.input-field input[type="text"],
+	.input-field input[type="email"],
+	.input-field input[type="password"] {
+	  width: 100%;
+	  padding: 10px;
+	  border: 1px solid #ccc;
+	  border-radius: 5px;
+	}
+
+	.input-field label {
+	  display: block;
+	  margin-bottom: 10px;
+	  font-size: 16px;
+	  color: #666;
+	}
+
+	.input-field input[type="text"]:focus,
+	.input-field input[type="email"]:focus,
+	.input-field input[type="password"]:focus {
+	  border-color: #337ab7;
+	  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.btn {
+	  background-color: #337ab7;
+	  color: #fff;
+	  padding: 10px 20px;
+	  border: none;
+	  border-radius: 20px;
+	  cursor: pointer;
+	}
+
+	.btn:hover {
+	  background-color: #23527c;
+	}
+	</style>
+</head>
+<body>
+	<section class="place">
+		<div class="leftHalf">
+			<h1 class="bigText">Create an account in Brand X.</h1>
+			<p class="logParag" >Already have an account?<a href="LogIn.html">Login</a></p>
+		</div>
+
+		<div class="rightHalf">
+			<div id="modal-signup" >
+				<div class="modal-content">
+					<h4>Sign up</h4><br />
+					<form id="signup-form">
+						<div class="input-field">
+							<input type="text" id="signup-fname" required />
+							<label for="signup-fname">First Name</label>
+						</div>
+						<div class="input-field">
+							<input type="text" id="signup-lname" required />
+							<label for="signup-lname">Last Name</label>
+						</div>
+						<div class="input-field">
+							<input type="email" id="signup-email" required />
+							<label for="signup-email">Email address</label>
+						</div>
+						<div class="input-field">
+							<input type="password" id="signup-password" required />
+							<label for="signup-password">Choose password</label>
+						</div>
+						<button class="btn black darken-2 z-depth-0" style="border-radius: 20px;width:100px;" >Sign up</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		const form = document.getElementById('signup-form');
+
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+
+			// You can add validation logic here to check if the form is valid
+
+			// Assuming the form is valid, redirect to the desired page
+			window.location.href = 'Home.html'; // replace with your desired page URL
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Appointment Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .booking-container {
+            width: 400px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .booking-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .message {
+            margin-top: 15px;
+            font-size: 14px;
+            color: green;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-container">
+        <h2>Book an Appointment</h2>
+        <div class="form-group">
+            <label for="doctor">Choose a Doctor</label>
+            <select id="doctor">
+                <option value="Dr. Smith">Dr. Smith - Cardiologist</option>
+                <option value="Dr. Brown">Dr. Brown - Dentist</option>
+                <option value="Dr. Taylor">Dr. Taylor - Pediatrician</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="date">Appointment Date</label>
+            <input type="date" id="date" required />
+        </div>
+        <div class="form-group">
+            <label for="time">Preferred Time</label>
+            <input type="time" id="time" required />
+        </div>
+        <button class="btn" id="bookButton">Book Appointment</button>
+        <p class="message" id="message"></p>
+    </div>
+
+    <script>
+        document.getElementById('bookButton').addEventListener('click', function () {
+            const doctor = document.getElementById('doctor').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+
+            if (!date || !time) {
+                alert('Please select both a date and time.');
+                return;
+            }
+
+            // Prompt for user's phone number
+            const phoneNumber = prompt('Please enter your mobile number:');
+            if (!phoneNumber || isNaN(phoneNumber)) {
+                alert('Invalid phone number. Please try again.');
+                return;
+            }
+
+            // Simulate sending an SMS
+            setTimeout(() => {
+                document.getElementById('message').textContent = `Appointment booked with ${doctor} on ${date} at ${time}. A confirmation message has been sent to ${phoneNumber}.`;
+                alert(`Appointment booked! SMS sent to ${phoneNumber}: "You have successfully booked an appointment."`);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

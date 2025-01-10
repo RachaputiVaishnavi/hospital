@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Lab Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: skyblue;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .container {
+            margin: 20px auto;
+            max-width: 800px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: skyblue;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f4f4f9;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        .total {
+            text-align: right;
+            padding-right: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hospital Lab Results</h1>
+    </header>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Test Name</th>
+                    <th>Test Date</th>
+                    <th>Cost</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Complete Blood Count (CBC)</td>
+                    <td>2025-01-05</td>
+                    <td>$25</td>
+                    <td>Normal</td>
+                </tr>
+                <tr>
+                    <td>Blood Glucose Test</td>
+                    <td>2025-01-06</td>
+                    <td>$20</td>
+                    <td>Normal</td>
+                </tr>
+                <tr>
+                    <td>Liver Function Test (LFT)</td>
+                    <td>2025-01-07</td>
+                    <td>$30</td>
+                    <td>Elevated</td>
+                </tr>
+                <tr>
+                    <td>Cholesterol Test</td>
+                    <td>2025-01-08</td>
+                    <td>$15</td>
+                    <td>Normal</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="total">Total</td>
+                    <td></td>
+                    <td>$90</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <footer>
+        &copy; 2025 Hospital Lab. All rights reserved.
+    </footer>
+</body>
+</html>

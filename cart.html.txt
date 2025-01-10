@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Shopping Cart</h1>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product Image">
+            <div class="product-details">
+                <h2>Jamun Shots</h2>
+                <p>₹140.00</p>
+                <div class="quantity-controls">
+                    <button class="decrease-qty">-</button>
+                    <span class="qty">0</span>
+                    <button class="increase-qty">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product Image">
+            <div class="product-details">
+                <h2>Latte coffee</h2>
+                <p>₹200.00</p>
+                <div class="quantity-controls">
+                    <button class="decrease-qty">-</button>
+                    <span class="qty">0</span>
+                    <button class="increase-qty">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product Image">
+            <div class="product-details">
+                <h2>Affogato</h2>
+                <p>₹199.00</p>
+                <div class="quantity-controls">
+                    <button class="decrease-qty">-</button>
+                    <span class="qty">0</span>
+                    <button class="increase-qty">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="cart">
+            <h2>Your Cart</h2>
+            <ul class="cart-items">
+                <!-- Cart items will be added here dynamically -->
+            </ul>
+            <p class="total">Total: ₹0.00</p>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>

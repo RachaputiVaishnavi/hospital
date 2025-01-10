@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medication Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: skyblue;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .container {
+            margin: 20px auto;
+            max-width: 800px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        label, input, textarea {
+            padding: 8px;
+            margin: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 8px 12px;
+            background-color: skyblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: skyblue;
+        }
+
+        .medication-details {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: skyblue;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .notification {
+            display: none;
+            padding: 10px;
+            background-color: lightcoral;
+            color: white;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Medication Tracker</h1>
+    </header>
+
+    <div class="container">
+        <h2>Enter Medication Details</h2>
+        
+        <!-- Input fields for doctor details -->
+        <label for="doctor-name">Doctor's Name:</label>
+        <input type="text" id="doctor-name" placeholder="Enter doctor's name">
+
+        <label for="doctor-suggestion">Doctor's Suggestions:</label>
+        <textarea id="doctor-suggestion" placeholder="Enter the doctor's suggestions"></textarea>
+
+        <label for="medication">Medicines Taking:</label>
+        <input type="text" id="medication" placeholder="Enter the medicines you are taking (comma separated)">
+
+        <button onclick="saveMedicationDetails()">Save Medication Details</button>
+
+        <div class="medication-details">
+            <h3>Saved Medication Details:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Doctor's Name</th>
+                        <th>Suggestions</th>
+                        <th>Medicines</th>
+                    </tr>
+                </thead>
+                <tbody id="medication-table-body">
+                    <!-- Medication details will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="notification" id="medication-notification">
+            Reminder: It's time to take your medication!
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Medication Tracker. All rights reserved.
+    </footer>
+
+    <script>
+        // Function to save the medication details to localStorage
+        function saveMedicationDetails() {
+            const doctorName = document.getElementById('doctor-name').value;
+            const doctorSuggestion = document.getElementById('doctor-suggestion').value;
+            const medication = document.getElementById('medication').value;
+
+            if (!doctorName || !doctorSuggestion || !medication) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            // Create an object to store the medication details
+            const medicationDetails = {
+                doctorName: doctorName,
+                doctorSuggestion: doctorSuggestion,
+                medication: medication
+            };
+
+            // Save the details in localStorage
+            let savedMedications = JSON.parse(localStorage.getItem('medications')) || [];
+            savedMedications.push(medicationDetails);
+            localStorage.setItem('medications', JSON.stringify(savedMedications));
+
+            // Update the table to display the new details
+            displayMedicationDetails();
+
+            alert("Medication details saved!");
+        }
+
+        // Function to display the saved medication details in the table
+        function displayMedicationDetails() {
+            const savedMedications = JSON.parse(localStorage.getItem('medications')) || [];
+            const tableBody = document.getElementById('medication-table-body');
+            tableBody.innerHTML = '';
+
+            savedMedications.forEach(detail => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${detail.doctorName}</td>
+                    <td>${detail.doctorSuggestion}</td>
+                    <td>${detail.medication}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Function to show a reminder notification for medication
+        function showReminderNotification() {
+            document.getElementById('medication-notification').style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('medication-notification').style.display = 'none';
+            }, 5000); // Hide the notification after 5 seconds
+        }
+
+        // Set the reminder every day at a specific time (e.g., 8 AM)
+        function setMedicationReminder() {
+            const currentTime = new Date();
+            const reminderTime = new Date();
+            reminderTime.setHours(8, 0, 0, 0); // Set reminder at 8 AM
+
+            const timeDifference = reminderTime.getTime() - currentTime.getTime();
+
+            // Show the reminder notification at the set time
+            setTimeout(function() {
+                showReminderNotification();
+            }, timeDifference);
+        }
+
+        // Initialize the app by displaying saved medication details and setting reminder
+        window.onload = function() {
+            displayMedicationDetails();
+            setMedicationReminder();
+        };
+    </script>
+</body>
+</html>

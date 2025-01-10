@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Toggle - Dark Theme</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+  <style>
+    .changeTheme {
+      background: #1D1E22;
+      color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <div id="theme-btn" class="far fa-moon"></div>
+  <script>
+    const themeBtn = document.getElementById("theme-btn");
+    themeBtn.onclick = () => {
+      themeBtn.classList.toggle("fa-sun");
+      if (themeBtn.classList.contains("fa-sun")) {
+        document.body.classList.add("changeTheme");
+      } else {
+        document.body.classList.remove("changeTheme");
+      }
+    }
+  </script>
+</body>
+</html>

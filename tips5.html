@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Eating Tips</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: beige;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1000px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            animation: fadeIn 2s ease-in-out;
+            transition: transform 0.5s, box-shadow 0.5s;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .container img {
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+            animation: zoomIn 2s ease-in-out;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: left;
+            width: 50%;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        .content h1 {
+            color: #2c3e50;
+            transition: color 0.3s;
+        }
+
+        .content h1:hover {
+            color: #27ae60;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        .content ul {
+            padding: 0;
+            margin: 10px 0;
+            list-style: none;
+        }
+
+        .content ul li {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #34495e;
+            position: relative;
+            padding-left: 25px;
+            animation: fadeInUp 1s ease-in-out;
+            transition: color 0.3s;
+        }
+
+        .content ul li:hover {
+            color: #27ae60;
+        }
+
+        .content ul li:before {
+            content: "\2713";
+            color: #27ae60;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .content a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .content a:hover {
+            background-color: #2980b9;
+            transform: translateY(-5px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://cdn.todaysrdh.com/wp-content/uploads/2024/04/hand-hygiene-rdh.jpg" alt="Healthy Food">
+        <div class="content">
+            <h1>Hygiene Tips</h1>
+            <p>Healthy hygiene is essential for maintaining overall well-being. Here are some detailed tips to guide your journey to better nutrition:</p>
+            <ul>
+                <li> Practice good hygiene regularly to ensure your body stays clean and healthy.</li>
+                <li>Make washing your hands a significant part of your routine to prevent the spread of germs.</li>
+                <li>Opt for regular showers and clean clothes to maintain freshness and cleanliness.</li>
+                <li>Stay hydrated and clean by drinking water and keeping your skin healthy with proper care.</li>
+                <li>Limit contact with surfaces that may harbor germs, and disinfect commonly used items.</li>
+                <li>Include oral hygiene practices like brushing and flossing twice daily for healthy teeth and gums.</li>
+                <li>Practice mindful hygiene by paying attention to personal cleanliness without rushing.</li>
+                <li>Plan regular hygiene habits, such as grooming and skincare, to maintain cleanliness throughout the day.</li>
+            </ul>
+            <a href="https://www.google.com/search?q=healthy+eating+tips" target="_blank">Check More on Google</a>
+        </div>
+    </div>
+</body>
+</html>

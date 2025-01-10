@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Surgery Department</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: skyblue;
+            margin: 0;
+            padding: 20px;
+        }
+        .department-card {
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: auto;
+        }
+        .department-card h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .availability, .details {
+            margin: 15px 0;
+        }
+        .details {
+            font-style: italic;
+            color: #666;
+        }
+        .contact {
+            font-weight: bold;
+            margin: 15px 0;
+            color: #555;
+        }
+        .more-info {
+            display: none;
+            margin-top: 15px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease-in-out;
+        }
+        .more-info.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .show-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .show-button:hover {
+            background-color: #0056b3;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .more-info.visible p {
+            animation: fadeInUp 0.4s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="department-card">
+        <h1>General Surgery Department</h1>
+        <div class="availability">
+            <strong>Operating Hours:</strong>
+            <p>Monday to Friday: 8:00 AM - 6:00 PM</p>
+            <p>Saturday: 9:00 AM - 3:00 PM</p>
+        </div>
+        <div class="contact">
+            <strong>Contact Number:</strong> 8121336083
+        </div>
+        <div class="details">
+            "The General Surgery Department specializes in a wide range of surgical procedures, including minimally invasive surgeries, for various medical conditions. Our highly trained surgeons ensure optimal patient care with the latest techniques."
+        </div>
+        <button class="show-button" onclick="toggleInfo()">More Info</button>
+        <div class="more-info">
+            <h2>About the General Surgery Department</h2>
+            <p>Our General Surgery Department is dedicated to providing high-quality surgical care for various medical conditions. We offer advanced treatment options and minimally invasive techniques to ensure the best outcomes for our patients.</p>
+            <p>Services include:</p>
+            <ul>
+                <li>Appendectomy (Removal of Appendix)</li>
+                <li>Cholecystectomy (Gallbladder Removal)</li>
+                <li>Hernia Repair</li>
+                <li>Colorectal Surgery</li>
+                <li>Laparoscopic Surgery</li>
+                <li>Breast Cancer Surgery</li>
+                <li>Thyroid Surgery</li>
+            </ul>
+            <p>Our skilled surgeons are committed to providing safe and effective care, ensuring a smooth recovery for each patient.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleInfo() {
+            const info = document.querySelector('.more-info');
+            const button = document.querySelector('.show-button');
+            if (info.classList.contains('visible')) {
+                info.classList.remove('visible');
+                button.textContent = 'More Info';
+            } else {
+                info.classList.add('visible');
+                button.textContent = 'Less Info';
+            }
+        }
+    </script>
+</body>
+</html>

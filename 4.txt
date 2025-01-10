@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+    position: relative;
+    background-image: url("https://assets.architecturaldigest.in/photos/612e43324fd431118ff13bd8/16:9/w_1616,h_909,c_limit/Stylish%20work%20from%20home%20office.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; /* Use viewport height to cover the entire screen */
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: center; /* Center items vertically */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.text {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    padding: 20px;
+    max-width: 50%; /* Limit width to avoid overflowing */
+    margin: 0 auto; /* Center horizontally */
+    transition: background-color 0.3s, transform 0.3s; /* Add transitions */
+}
+
+.text:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Change background color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.image-box {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    padding: 10px;
+    max-width: 200px; /* Set max-width for each image box */
+    margin: 10px; /* Add margin for spacing between image boxes */
+    transition: background-color 0.3s, transform 0.3s; /* Add transitions */
+}
+
+.image-box:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Change background color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.image-box img {
+    max-width: 100%; /* Ensure images fit within their container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below images */
+    margin-bottom: 10px; /* Add spacing below images */
+    transition: transform 0.3s; /* Add transition for image */
+}
+
+.image-box:hover img {
+    transform: scale(1.1); /* Slightly enlarge image on hover */
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="text">
+        <!-- Your text content goes here -->
+        <h1>Welcome to My Home Decor Collection</h1>
+        <p>Explore our curated selection of home decor items.</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://mysleepyhead.com/media/catalog/product/s/t/stck_4.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=&width=" alt="BOOK CASE">
+        <p>BOOK CASE</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://images.meesho.com/images/products/107880516/rblja_512.webp" alt="STUDY LAMP">
+        <p>STUDY LAMP</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://casadeamor.in/cdn/shop/files/selfwateringpotpurple-7.jpg?v=1712048545&width=1445" alt="FLOWER POTS">
+        <p>FLOWER POTS</p>
+    </div>
+
+    <div class="image-box">
+        <img src="https://www.kuberindustries.co.in/uploads/kuberindustries/products/kuber-industries-wall-clock--fancy-watch-wall-clocks--office-wall-clock--clock-for-living-room--cloc-5136999415698794_l.jpg" alt="CLOCK">
+        <p>CLOCK</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://www.nilkamalfurniture.com/cdn/shop/products/MELEGANTOFTBWNT.jpg?v=1674191882&width=1080" alt="TABLE">
+        <p>TABLE</p>
+    </div>
+</div>
+</body>
+</html>

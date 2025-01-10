@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+    position: relative;
+    background-image: url("https://media.designcafe.com/wp-content/uploads/2024/01/24175345/modern-luxury-bedroom-design-ideas.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; /* Use viewport height to cover the entire screen */
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: center; /* Center items vertically */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.text {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    padding: 20px;
+    max-width: 50%; /* Limit width to avoid overflowing */
+    margin: 0 auto; /* Center horizontally */
+    transition: transform 0.3s, opacity 0.3s; /* Add transitions */
+}
+
+.text:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    opacity: 0.9; /* Slightly reduce opacity on hover */
+}
+
+.image-box {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    padding: 10px;
+    max-width: 200px; /* Set max-width for each image box */
+    margin: 10px; /* Add margin for spacing between image boxes */
+    transition: transform 0.3s, opacity 0.3s; /* Add transitions */
+}
+
+.image-box:hover {
+    transform: scale(1.1); /* Enlarge slightly on hover */
+    opacity: 0.8; /* Reduce opacity slightly on hover */
+}
+
+.image-box img {
+    max-width: 100%; /* Ensure images fit within their container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below images */
+    margin-bottom: 10px; /* Add spacing below images */
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="text">
+        <!-- Your text content goes here -->
+        <h1>Welcome to My Home Decor Collection</h1>
+        <p>Explore our curated selection of home decor items.</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://images-cdn.ubuy.co.in/634e57974eb9325d25056876-flower-vase-for-decor-glass-table-vase.jpg" alt="FLOWERS">
+        <p>FLOWERS</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://www.sunshineboulevard.in/cdn/shop/products/IMG_20210413_124017W_1000x1000.jpg?v=1618467115" alt="LAMPS">
+        <p>LAMPS</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://wallmantra.com/wp-content/uploads/skybird-metal-wall-art-large-abstract-metal-wall-art-31862357885094.jpg" alt="WALL DECOR">
+        <p>WALL DECOR</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://i0.wp.com/www.theotheraesthetic.com/wp-content/uploads/2022/07/Rose-Gold-Vintage-Round-Clock1.jpeg" alt="CLOCKS">
+        <p>CLOCKS</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://m.media-amazon.com/images/I/81TAtL-KK+L.AC_UF894,1000_QL80.jpg" alt="IDOLS">
+        <p>IDOLS</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://shopauthindia.s3.ap-south-1.amazonaws.com/wp-content/uploads/2023/09/13124328/11-4-bright09-rainbow-arts-original-imaggfpvzttjcefh-1.jpeg" alt="FRAMES">
+        <p>FRAMES</p>
+    </div>
+</div>
+</body>
+</html>

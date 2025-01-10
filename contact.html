@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Contact Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .contact-info h2 {
+            margin-bottom: 10px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .map {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .map a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .map a:hover {
+            background-color: #45a049;
+        }
+        .chat-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .chat-box h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .chat-box .messages {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .chat-box input, .chat-box button {
+            padding: 10px;
+            margin-top: 5px;
+        }
+        .chat-box input {
+            width: calc(100% - 90px);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+        .chat-box button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .chat-box button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Contact Us
+    </header>
+    <div class="container">
+        <div class="contact-info">
+            <h2>Our Address</h2>
+            <p>123 Health Lane, Wellness City, HealthyState, 56789</p>
+            <p>Phone: <a href="tel:+123456789">+1 234 567 89</a></p>
+            <p>Email: <a href="Health:contact@hospital.com">contact@hospital.com</a></p>
+        </div>
+
+        <div class="map">
+            <h2>Find Us</h2>
+            <a href="https://www.google.com/maps?q=123+Health+Lane,+Wellness+City,+HealthyState" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/000000/google-maps.png" alt="Google Maps"> Google Maps
+            </a>
+        </div>
+
+        <div class="chat-box">
+            <h2>Drop Your Queries</h2>
+            <div class="messages" id="messages">
+                <!-- Chat messages will appear here -->
+            </div>
+            <input type="text" id="userQuery" placeholder="Type your query here...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const messages = document.getElementById('messages');
+            const userQuery = document.getElementById('userQuery');
+
+            if (userQuery.value.trim() !== '') {
+                const message = document.createElement('div');
+                message.textContent = `You: ${userQuery.value}`;
+                messages.appendChild(message);
+
+                const reply = document.createElement('div');
+                reply.textContent = 'Hospital: Thank you for your query. We will respond shortly.';
+                reply.style.color = 'blue';
+                messages.appendChild(reply);
+
+                userQuery.value = '';
+
+                // Scroll to the bottom
+                messages.scrollTop = messages.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>

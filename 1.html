@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+    position: relative;
+    background-color:skyblue;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; /* Use viewport height to cover the entire screen */
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: center; /* Center items vertically */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.text {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    padding: 20px;
+    width:190px;
+    max-width: 50%; /* Limit width to avoid overflowing */
+    margin: 0 auto; /* Center horizontally */
+    transition: transform 0.3s, opacity 0.3s; /* Add transitions */
+}
+
+.text:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    opacity: 0.9; /* Slightly reduce opacity on hover */
+}
+
+.image-box {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    padding: 10px;
+    height:300px;
+    width:200px;
+    max-width: 200px; /* Set max-width for each image box */
+    margin: 10px; /* Add margin for spacing between image boxes */
+    transition: transform 0.3s, opacity 0.3s; /* Add transitions */
+}
+
+.image-box:hover {
+    transform: scale(1.1); /* Enlarge slightly on hover */
+    opacity: 0.8; /* Reduce opacity slightly on hover */
+}
+
+.image-box img {
+    max-width: 100%; /* Ensure images fit within their container */
+    width:150px;
+    height: 200px; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below images */
+    margin-bottom: 10px; /* Add spacing below images */
+}
+</style>
+
+</head>
+<body>
+    
+<div class="container">
+    
+    <div class="text">
+        <!-- Your text content goes here -->
+        <h1>Welcome to Our Orthopedic Specialists</h1>
+        <p>For Further Info Visit Main Page</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://media.istockphoto.com/id/171322576/photo/female-doctor-with-a-tablet-computer-isolated.jpg?s=612x612&w=0&k=20&c=9zZlxz079ufo8eQXociPJGblakXrOkGWqM4bSOoH_yM=" alt="FLOWERS">
+        <p>Dr.koushik</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://media.istockphoto.com/id/1161445847/photo/full-body-portrait-of-happy-smiling-doctor-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=bzXfypeUH5hcxv33XVgAcL3JmQ3-w25zvT7Y8OZUVAA=" alt="LAMPS">
+        <p>Dr.Leo</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://media.istockphoto.com/id/518642219/photo/happy-mature-doctor.jpg?s=612x612&w=0&k=20&c=KW2m7MFNe4qscD0O6X0t2Regz3S7nKT4koT-A0aaGIs=" alt="WALL DECOR">
+        <p>Dr.Ram</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://media.istockphoto.com/id/185288528/photo/smiling-african-american-male-doctor-isolated.jpg?s=612x612&w=0&k=20&c=JCCdlizGVIVlbv0yOA99T_lc9hg3Ms9LXC2WIjOiZzw=" alt="CLOCKS">
+        <p>Dr.Shekar</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSodbaT4UGyzb75TMq049rSZtpx40A6r7hiRPg8P7kuN5tixjYALkoQCtpn6tl2Gv5Zpbk&usqp=CAU" alt="IDOLS">
+        <p>Dr.Sujatha</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://img.freepik.com/premium-photo/handsome-doctor-portrait-full-length_53419-11056.jpg?w=360" alt="FRAMES">
+        <p>Dr.Montey</p>
+    </div>
+</div>
+</body>
+</html>

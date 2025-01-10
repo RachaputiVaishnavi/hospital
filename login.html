@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Login and Signup Popup</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://img.freepik.com/premium-photo/doctor-medical-clinic-blur-background-hospital-service-center-patient-s-ward_38810-9608.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            display: flex;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .image-container {
+            flex: 1;
+            background: url('https://img.freepik.com/premium-vector/vector-illustration-medical-white-cross-hospital-symbol-icon-emergency-health-care_501907-238.jpg') no-repeat center center;
+            background-size: cover;
+            display: none;         
+        }
+
+        .form-container {
+            flex: 1;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="password"] {
+            width: 100%;
+            padding: 15px 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container .forgot-password {
+            display: block;
+            margin-top: 20px;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .form-container .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #999;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .toggle-link {
+            margin-top: 20px;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .toggle-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 768px) {
+            .image-container {
+                display: block; /* Show on larger screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="btn" onclick="openPopup('login')">Login</button>
+    <button class="btn" onclick="openPopup('signup')">Signup</button>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup()">&times;</button>
+            <div class="form-container" id="login-form">
+                <h2>Login</h2>
+                <form id="login-form-element">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <a href="#" class="toggle-link" onclick="toggleForm('signup')">Don't have an account? Signup</a>
+                </form>
+            </div>
+            <div class="form-container" id="signup-form" style="display: none;">
+                <h2>Signup</h2>
+                <form action="#" method="post">
+                    <input type="text" name="fullname" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Signup</button>
+                    <a href="#" class="toggle-link" onclick="toggleForm('login')">Already have an account? Login</a>
+                </form>
+            </div>
+            <div class="image-container"></div>
+        </div>
+    </div>
+
+    <script>
+        function openPopup(formType) {
+            document.getElementById('popup').style.display = 'flex';
+            if (formType === 'login') {
+                document.getElementById('login-form').style.display = 'flex';
+                document.getElementById('signup-form').style.display = 'none';
+            } else {
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('signup-form').style.display = 'flex';
+            }
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function toggleForm(formType) {
+            if (formType === 'login') {
+                document.getElementById('login-form').style.display = 'flex';
+                document.getElementById('signup-form').style.display = 'none';
+            } else {
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('signup-form').style.display = 'flex';
+            }
+        }
+
+        // Add redirection for login
+        document.getElementById('login-form-element').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form submission
+            window.location.href = 'index.html'; // Redirect to main.html
+        });
+    </script>
+
+</body>
+</html>

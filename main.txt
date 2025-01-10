@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Decor Website</title>
+    <!-- Link to css -->
+     <link rel="stylesheet" href="style.css">
+     <!-- Box Icon -->
+     <link rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <a href="#" class="logo">Brand <span>X.</span></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#new">New Arival</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#brands">Our Partners</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+    <!-- Home -->
+     <section class="home" id="home">
+        <div class="home-text">
+            <h1><Span>Make </Span>Your Comfort <br>Is Our <span>Happiness</span></h1>
+            <p>Decor the dreams with Brand X so that the designs will turn heads</p>
+            <a href="shop" class="btn">Shop Now</a>
+        </div>
+     </section>
+     <!-- Shop -->
+      <section class="shop" id="shop">
+        <div class="heading">
+            <span>New Arrival</span>
+            <h2>Shop Now</h2>
+        </div>
+        <!-- Content -->
+         <div class="shop-container">
+            <!-- Box 1 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="data:image/jpeg;base64,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" alt="">
+                </div>
+                <div class="title-price">
+                    <h3>Gray Chair</h3>
+                    <div class="stars">
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class='bx bxs-star-half' ></i>
+                    </div>
+                </div>
+                <span>46$</span>
+                <i class='bx bx-cart' ></i>
+            </div>
+            <!-- Box 2 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://th.bing.com/th?id=OIP.fUL0LDBLG6laiarCIpsxCwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="">
+                </div>
+                <div class="title-price">
+                    <h3>The Tree Painting</h3>
+                    <div class="stars">
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class='bx bxs-star-half' ></i>
+                    </div>
+                </div>
+                <span>66$</span>
+                <i class='bx bx-cart' ></i>
+            </div>
+            <!-- Box 3 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://th.bing.com/th?id=OIP.fUL0LDBLG6laiarCIpsxCwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="">
+                </div>
+                <div class="title-price">
+                    <h3>The Tree Painting</h3>
+                    <div class="stars">
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class='bx bxs-star-half' ></i>
+                    </div>
+                </div>
+                <span>66$</span>
+                <i class='bx bx-cart' ></i>
+            </div>
+            <!-- Box 4 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://th.bing.com/th?id=OIP.fUL0LDBLG6laiarCIpsxCwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="">
+                </div>
+                <div class="title-price">
+                    <h3>The Tree Painting</h3>
+                    <div class="stars">
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class='bx bxs-star-half' ></i>
+                    </div>
+                </div>
+                <span>66$</span>
+                <i class='bx bx-cart' ></i>
+            </div>
+            <!-- Box 5 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://th.bing.com/th?id=OIP.fUL0LDBLG6laiarCIpsxCwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="">
+                </div>
+                <div class="title-price">
+                    <h3>The Tree Painting</h3>
+                    <div class="stars">
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class='bx bxs-star-half' ></i>
+                    </div>
+                </div>
+                <span>66$</span>
+                <i class='bx bx-cart' ></i>
+            </div>
+            <!-- Box 6 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://th.bing.com/th?id=OIP.fUL0LDBLG6laiarCIpsxCwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="">
+                </div>
+                <div class="title-price">
+                    <h3>The Tree Painting</h3>
+                    <div class="stars">
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class='bx bxs-star-half' ></i>
+                    </div>
+                </div>
+                <span>66$</span>
+                <i class='bx bx-cart' ></i>
+            </div>
+         </div>
+      </section>
+      <!-- New Arrival -->
+       <section class="new" id="new">
+        <div class="heading">
+            <span>New Collection</span>
+            <h2>Best Selling</h2>
+        </div>
+        <!-- Content -->
+         <div class="new-container">
+            <!-- Box 1 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://th.bing.com/th?id=OIP.fUL0LDBLG6laiarCIpsxCwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="">
+                </div>
+                <div class="title-price">
+                    <h3>The Tree Painting</h3>
+                    <div class="stars">
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class='bx bxs-star-half' ></i>
+                    </div>
+                </div>
+                <span>66$</span>
+                <i class='bx bx-cart' ></i>
+            </div>
+            <!-- Box 2 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://th.bing.com/th?id=OIP.fUL0LDBLG6laiarCIpsxCwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="">
+                </div>
+                <div class="title-price">
+                    <h3>The Tree Painting</h3>
+                    <div class="stars">
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class='bx bxs-star-half' ></i>
+                    </div>
+                </div>
+                <span>66$</span>
+                <i class='bx bx-cart' ></i>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://th.bing.com/th?id=OIP.fUL0LDBLG6laiarCIpsxCwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="">
+                </div>
+                <div class="title-price">
+                    <h3>The Tree Painting</h3>
+                    <div class="stars">
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class='bx bxs-star-half' ></i>
+                    </div>
+                </div>
+                <span>66$</span>
+                <i class='bx bx-cart' ></i>
+            </div>
+            <!-- Box 4 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://th.bing.com/th?id=OIP.fUL0LDBLG6laiarCIpsxCwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="">
+                </div>
+                <div class="title-price">
+                    <h3>The Tree Painting</h3>
+                    <div class="stars">
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class='bx bxs-star-half' ></i>
+                    </div>
+                </div>
+                <span>66$</span>
+                <i class='bx bx-cart' ></i>
+            </div>
+            <!-- Box 5 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://th.bing.com/th?id=OIP.fUL0LDBLG6laiarCIpsxCwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="">
+                </div>
+                <div class="title-price">
+                    <h3>The Tree Painting</h3>
+                    <div class="stars">
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class='bx bxs-star-half' ></i>
+                    </div>
+                </div>
+                <span>66$</span>
+                <i class='bx bx-cart' ></i>
+            </div>
+            <!-- Box 6 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://th.bing.com/th?id=OIP.fUL0LDBLG6laiarCIpsxCwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="">
+                </div>
+                <div class="title-price">
+                    <h3>The Tree Painting</h3>
+                    <div class="stars">
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class = 'bx bxs-star'></i>
+                        <i class='bx bxs-star-half' ></i>
+                    </div>
+                </div>
+                <span>66$</span>
+                <i class='bx bx-cart' ></i>
+            </div>
+         </div>
+       </section>
+       <!-- About -->
+        <section class="about" id="about">
+            <div class="about-img">
+                <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700211673-1200x750.jpg" alt="">
+            </div>
+            <div class="about-text">
+                <span><h1>About Us</h1></span>
+                <h4>Home Decor is an inportant part <br>for comfortable life.</h4><p>
+                     When you buy home decor online, you get to browse through a large number of options with little to no effort. <br>
+                    If you’re buying decorative items online, you can visit our vast collection at Brand X.  We have everything from plants and planters, to pots, candle holders, vases, and more 
+                    to add a refined touch to our stock. Add to your furniture, set a theme for your house, or simply play around with all the options we have to give your house a new look and feel. </p>
+                    <a href="#shop" class="btn">Learn More</a>
+            </div>
+        </section>
+        <!-- Brand -->
+         <section class="brands" id="brands">
+            <div class="heading">
+                <span>Brands</span>
+                <h2>Our Brands Partners</h2>
+            </div>
+            <div class="brands-container">
+                <img src="img/google.png" alt="">
+                <img src="img/amazon.png" alt="">
+                <img src="img/netflix.png" alt="">
+                <img src="img/tesla.png" alt="">
+                <img src="img/starbucks.png" alt="">
+                <img src="img/zoom.png" alt="">
+            </div>
+         </section>
+         <selection class="newletter" id="contact">
+            <h2>Subscribe To Newsletters</h2>
+            <div class="news-box">
+                <input type="text" placeholder="Enter Your Email... ">
+                <a href="#" class=""btn>Subscribe</a>
+            </div>
+         </selection>
+
+</body>
+</html>

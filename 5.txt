@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+    position: relative;
+    background-image: url("https://media.istockphoto.com/id/149360161/photo/manicured-house-and-garden.jpg?s=612x612&w=0&k=20&c=QM7ussZ_9IjiMbUUIusbKmXNRgTYy__C1XpZnQx2BKQ=");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; /* Use viewport height to cover the entire screen */
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: center; /* Center items vertically */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.text {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    padding: 20px;
+    max-width: 50%; /* Limit width to avoid overflowing */
+    margin: 0 auto; /* Center horizontally */
+    transition: transform 0.5s, background-color 0.5s; /* Add transition */
+}
+
+.text:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    background-color: rgba(255, 255, 255, 0.7); /* Change background color on hover */
+}
+
+.image-box {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    padding: 10px;
+    max-width: 200px; /* Set max-width for each image box */
+    margin: 10px; /* Add margin for spacing between image boxes */
+    transition: transform 0.5s, background-color 0.5s; /* Add transition */
+}
+
+.image-box:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    background-color: rgba(255, 255, 255, 0.7); /* Change background color on hover */
+}
+
+.image-box img {
+    max-width: 100%; /* Ensure images fit within their container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below images */
+    margin-bottom: 10px; /* Add spacing below images */
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="text">
+        <!-- Your text content goes here -->
+        <h1>Welcome to My Home Decor Collection</h1>
+        <p>Explore our curated selection of home decor items.</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2021/10/DE/IS/LW/32996679/new-product-500x500.jpeg" alt="BOOK CASE">
+        <p>BOOK CASE</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://hips.hearstapps.com/hmg-prod/images/flower-bed-ideas-repurpose-65d7b11680b15.jpeg" alt="STUDY LAMP">
+        <p>STUDY LAMP</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/hammock-swing/6/7/e/spyg-645514417-spydergreen-original-imaghxhy7sfzzmye.jpeg?q=20&crop=false" alt="FLOWER POTS">
+        <p>FLOWER POTS</p>
+    </div>
+    <div class="image-box">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2021/6/JJ/PU/GV/38951135/plastic-hanging-flower-pot.jpg" alt="FLOWER POTS">
+        <p>FLOWER POTS</p>
+    </div>
+</div>
+</body>
+</html>

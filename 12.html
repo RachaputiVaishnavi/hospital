@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pediatrics Department</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: skyblue;
+            margin: 0;
+            padding: 20px;
+        }
+        .department-card {
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: auto;
+        }
+        .department-card h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .availability, .details {
+            margin: 15px 0;
+        }
+        .details {
+            font-style: italic;
+            color: #666;
+        }
+        .contact {
+            font-weight: bold;
+            margin: 15px 0;
+            color: #555;
+        }
+        .more-info {
+            display: none;
+            margin-top: 15px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease-in-out;
+        }
+        .more-info.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .show-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .show-button:hover {
+            background-color: #0056b3;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .more-info.visible p {
+            animation: fadeInUp 0.4s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="department-card">
+        <h1>Pediatrics Department</h1>
+        <div class="availability">
+            <strong>Operating Hours:</strong>
+            <p>Monday to Friday: 8:00 AM - 6:00 PM</p>
+            <p>Saturday: 9:00 AM - 3:00 PM</p>
+        </div>
+        <div class="contact">
+            <strong>Contact Number:</strong> 9031633805
+        </div>
+        <div class="details">
+            "The Pediatrics Department is dedicated to the health and well-being of children, from newborns to adolescents. Our experienced pediatricians provide comprehensive care, focusing on growth, development, and preventive health."
+        </div>
+        <button class="show-button" onclick="toggleInfo()">More Info</button>
+        <div class="more-info">
+            <h2>About the Pediatrics Department</h2>
+            <p>Our Pediatrics Department offers specialized care for children, including regular check-ups, immunizations, and treatment for a variety of pediatric conditions. We are committed to providing a safe and caring environment for children and their families.</p>
+            <p>Services include:</p>
+            <ul>
+                <li>Routine Pediatric Check-ups</li>
+                <li>Immunizations and Vaccinations</li>
+                <li>Treatment for Acute and Chronic Illnesses</li>
+                <li>Newborn and Infant Care</li>
+                <li>Adolescent Health Services</li>
+                <li>Growth and Development Monitoring</li>
+                <li>Management of Pediatric Asthma and Allergies</li>
+            </ul>
+            <p>Our pediatricians work closely with parents to ensure that each child receives the best care tailored to their needs, promoting healthy development and well-being at every stage of childhood.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleInfo() {
+            const info = document.querySelector('.more-info');
+            const button = document.querySelector('.show-button');
+            if (info.classList.contains('visible')) {
+                info.classList.remove('visible');
+                button.textContent = 'More Info';
+            } else {
+                info.classList.add('visible');
+                button.textContent = 'Less Info';
+            }
+        }
+    </script>
+</body>
+</html>

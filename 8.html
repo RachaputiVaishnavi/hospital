@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulmonologist Department</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: skyblue;
+            margin: 0;
+            padding: 20px;
+        }
+        .department-card {
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: auto;
+        }
+        .department-card h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .availability, .details {
+            margin: 15px 0;
+        }
+        .details {
+            font-style: italic;
+            color: #666;
+        }
+        .contact {
+            font-weight: bold;
+            margin: 15px 0;
+            color: #555;
+        }
+        .more-info {
+            display: none;
+            margin-top: 15px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease-in-out;
+        }
+        .more-info.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .show-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .show-button:hover {
+            background-color: #0056b3;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .more-info.visible p {
+            animation: fadeInUp 0.4s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="department-card">
+        <h1>Pulmonologist Department</h1>
+        <div class="availability">
+            <strong>Operating Hours:</strong>
+            <p>Monday to Friday: 8:00 AM - 6:00 PM</p>
+            <p>Saturday: 9:00 AM - 3:00 PM</p>
+        </div>
+        <div class="contact">
+            <strong>Contact Number:</strong> 9394514557
+        </div>
+        <div class="details">
+            "The Pulmonologist Department is dedicated to the diagnosis and treatment of lung diseases and respiratory disorders. Our experienced team is known for providing comprehensive care to patients with breathing conditions."
+        </div>
+        <button class="show-button" onclick="toggleInfo()">More Info</button>
+        <div class="more-info">
+            <h2>About the Pulmonologist Department</h2>
+            <p>Our Pulmonologist Department specializes in the treatment of various lung and respiratory disorders. We offer expert care for conditions such as asthma, COPD, pneumonia, tuberculosis, and lung cancer. Our team of skilled pulmonologists is equipped with state-of-the-art diagnostic tools and treatment methods.</p>
+            <p>Services include:</p>
+            <ul>
+                <li>Pulmonary Function Testing (PFT)</li>
+                <li>Bronchoscopy and Thoracoscopy</li>
+                <li>Management of Asthma and Allergies</li>
+                <li>Chronic Obstructive Pulmonary Disease (COPD) Management</li>
+                <li>Sleep Apnea Treatment</li>
+                <li>Respiratory Rehabilitation</li>
+            </ul>
+            <p>Our team is committed to providing the highest level of care and ensuring the best outcomes for our patients suffering from respiratory conditions.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleInfo() {
+            const info = document.querySelector('.more-info');
+            const button = document.querySelector('.show-button');
+            if (info.classList.contains('visible')) {
+                info.classList.remove('visible');
+                button.textContent = 'More Info';
+            } else {
+                info.classList.add('visible');
+                button.textContent = 'Less Info';
+            }
+        }
+    </script>
+</body>
+</html>

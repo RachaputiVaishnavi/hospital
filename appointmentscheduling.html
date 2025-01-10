@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Scheduler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: skyblue;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .container {
+            margin: 20px auto;
+            max-width: 800px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        input[type="number"], input[type="date"], input[type="time"] {
+            padding: 8px;
+            margin: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 8px 12px;
+            background-color:skyblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: skyblue;
+        }
+
+        .notification {
+            display: none;
+            padding: 10px;
+            background-color: lightcoral;
+            color: white;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            border-radius: 5px;
+        }
+
+        .alert-box {
+            margin-top: 20px;
+        }
+
+        .alert-box button {
+            background-color:skyblue;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Appointment Scheduler</h1>
+    </header>
+
+    <div class="container">
+        <h2>Schedule Next Appointment</h2>
+
+        <label for="last-visit-days">How many days since your last visit?</label>
+        <input type="number" id="last-visit-days" placeholder="Enter number of days">
+
+        <button onclick="askDoctorVisit()">Next Visit Calculation</button>
+
+        <div id="doctor-visit-section" style="display:none;">
+            <label for="doctor-visit-days">How many days after did the doctor ask you to visit?</label>
+            <input type="number" id="doctor-visit-days" placeholder="Enter number of days from last visit">
+
+            <button onclick="scheduleAppointment()">Schedule Appointment</button>
+        </div>
+
+        <div id="appointment-details" style="display:none;">
+            <h3>Next Appointment Scheduled:</h3>
+            <p id="next-appointment"></p>
+        </div>
+
+        <div class="notification" id="appointment-notification">
+            You have a scheduled appointment!
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Appointment Scheduler. All rights reserved.
+    </footer>
+
+    <script>
+        // Show the next visit date input after the user enters how many days since last visit
+        function askDoctorVisit() {
+            const lastVisitDays = document.getElementById('last-visit-days').value;
+            if (!lastVisitDays || lastVisitDays <= 0) {
+                alert("Please enter a valid number of days.");
+                return;
+            }
+
+            document.getElementById('doctor-visit-section').style.display = 'block';
+        }
+
+        // Function to schedule the appointment
+        function scheduleAppointment() {
+            const lastVisitDays = parseInt(document.getElementById('last-visit-days').value);
+            const doctorVisitDays = parseInt(document.getElementById('doctor-visit-days').value);
+
+            if (!doctorVisitDays || doctorVisitDays <= 0) {
+                alert("Please enter a valid number of days.");
+                return;
+            }
+
+            // Calculate the next appointment date
+            const currentDate = new Date();
+            const nextAppointmentDate = new Date(currentDate.setDate(currentDate.getDate() + (doctorVisitDays)));
+
+            // Display next appointment details
+            document.getElementById('next-appointment').innerHTML = `Your next appointment is scheduled for: ${nextAppointmentDate.toDateString()} at ${nextAppointmentDate.toLocaleTimeString()}`;
+            document.getElementById('appointment-details').style.display = 'block';
+
+            // Save the next appointment details to localStorage
+            const appointmentDetails = {
+                doctorVisitDays: doctorVisitDays,
+                nextAppointmentDate: nextAppointmentDate.toLocaleString()
+            };
+            localStorage.setItem('nextAppointment', JSON.stringify(appointmentDetails));
+
+            // Trigger appointment reminder notification
+            setReminderNotification(nextAppointmentDate);
+
+            alert("Your appointment has been scheduled!");
+        }
+
+        // Show the reminder notification when it's time for the appointment
+        function setReminderNotification(nextAppointmentDate) {
+            const currentTime = new Date();
+            const appointmentTime = new Date(nextAppointmentDate);
+
+            // Calculate the difference in time
+            const timeDifference = appointmentTime.getTime() - currentTime.getTime();
+
+            // Set the pop-up reminder notification to show at the set time
+            setTimeout(function() {
+                document.getElementById('appointment-notification').style.display = 'block';
+                setTimeout(function() {
+                    document.getElementById('appointment-notification').style.display = 'none';
+                }, 5000); // Hide the notification after 5 seconds
+            }, timeDifference);
+        }
+
+        // Check if there's a saved appointment and show the reminder
+        function showSavedAppointment() {
+            const savedAppointment = JSON.parse(localStorage.getItem('nextAppointment'));
+            if (savedAppointment) {
+                alert(`Your next appointment is scheduled for: ${savedAppointment.nextAppointmentDate}`);
+            }
+        }
+
+        // Load saved appointment reminder when page loads
+        window.onload = function() {
+            showSavedAppointment();
+        };
+    </script>
+</body>
+</html>

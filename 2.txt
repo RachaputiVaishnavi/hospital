@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+    position: relative;
+    background-image: url("https://static.asianpaints.com/content/dam/asianpaintsbeautifulhomes/gallery/modular-kitchen/simple-kitchen-design-with-green-cabinetry-and-modern-layout/simple-kitchen-design-with-green-cabinets.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; /* Use viewport height to cover the entire screen */
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: center; /* Center items vertically */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.text {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    padding: 20px;
+    max-width: 50%; /* Limit width to avoid overflowing */
+    margin: 0 auto; /* Center horizontally */
+    transition: transform 0.3s, opacity 0.3s; /* Add transitions */
+}
+
+.text:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    opacity: 0.9; /* Slightly reduce opacity on hover */
+}
+
+.image-box {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    padding: 10px;
+    max-width: 200px; /* Set max-width for each image box */
+    margin: 10px; /* Add margin for spacing between image boxes */
+    transition: transform 0.3s, opacity 0.3s; /* Add transitions */
+}
+
+.image-box:hover {
+    transform: scale(1.1); /* Enlarge slightly on hover */
+    opacity: 0.8; /* Reduce opacity slightly on hover */
+}
+
+.image-box img {
+    max-width: 100%; /* Ensure images fit within their container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below images */
+    margin-bottom: 10px; /* Add spacing below images */
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="text">
+        <!-- Your text content goes here -->
+        <h1>Welcome to My Home Decor Collection</h1>
+        <p>Explore our curated selection of home decor items.</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://i.etsystatic.com/8553195/r/il/7f0088/1732891270/il_570xN.1732891270_b8pg.jpg" alt="FRAMES">
+        <p>FRAMES</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://as1.ftcdn.net/v2/jpg/04/86/87/36/1000_F_486873609_Gap77635it2DIUL3du9nnrValJ9j2smL.jpg" alt="CROCKERY">
+        <p>CROCKERY</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://t4.ftcdn.net/jpg/06/23/65/07/360_F_623650716_MVCM6yL66OUTmoxSsrsqzqqL9zVV8cGf.jpg" alt="FLOWER POTS">
+        <p>FLOWER POTS</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5iRIS_xS8P5GXeVunhbXbMBh32TKXOE94DA&s" alt="WASH BASIN">
+        <p>WASH BASIN</p>
+    </div>
+    
+    <div class="image-box">
+        <img src="https://www.ulcdn.net/images/products/671623/product/FVSGCB33AO23301_LP.jpg?1662022463" alt="CUPBOARDS">
+        <p>CUPBOARDS</p>
+    </div>
+</div>
+</body>
+</html>

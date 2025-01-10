@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: skyblue;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .container {
+            margin: 20px auto;
+            max-width: 800px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: skyblue;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f4f4f9;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        .notification {
+            display: none;
+            padding: 10px;
+            background-color: lightcoral;
+            color: white;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            border-radius: 5px;
+        }
+
+        input[type="text"], input[type="time"] {
+            padding: 8px;
+            margin: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 8px 12px;
+            background-color: skyblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: skyblue;
+        }
+
+        .alert-box {
+            margin-top: 20px;
+        }
+
+        .alert-box button {
+            background-color: skyblue;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Appointment Tracker</h1>
+    </header>
+
+    <div class="container">
+        <h2>Book Appointment</h2>
+        <label for="doctor-name">Doctor's Name:</label>
+        <input type="text" id="doctor-name" placeholder="Enter doctor's name">
+
+        <label for="appointment-time">Appointment Time:</label>
+        <input type="time" id="appointment-time">
+
+        <button onclick="bookAppointment()">Book Appointment</button>
+
+        <div class="alert-box">
+            <h3>Last Appointment Details</h3>
+            <p id="last-appointment">No appointment booked yet.</p>
+            <button onclick="revisitLastAppointment()">Revisit Last Appointment</button>
+        </div>
+
+        <div class="notification" id="appointment-notification">
+            You have a scheduled appointment!
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Appointment Tracker. All rights reserved.
+    </footer>
+
+    <script>
+        // Function to save the appointment details to local storage
+        function bookAppointment() {
+            const doctorName = document.getElementById('doctor-name').value;
+            const appointmentTime = document.getElementById('appointment-time').value;
+
+            if (!doctorName || !appointmentTime) {
+                alert("Please fill in both fields.");
+                return;
+            }
+
+            const appointmentDetails = {
+                doctorName: doctorName,
+                appointmentTime: appointmentTime,
+                bookedAt: new Date().toLocaleString()
+            };
+
+            // Store the appointment details in localStorage
+            localStorage.setItem('lastAppointment', JSON.stringify(appointmentDetails));
+
+            // Update the displayed last appointment information
+            displayLastAppointment();
+            alert("Appointment booked successfully!");
+        }
+
+        // Function to display the last appointment information
+        function displayLastAppointment() {
+            const lastAppointment = JSON.parse(localStorage.getItem('lastAppointment'));
+
+            if (lastAppointment) {
+                const lastAppointmentText = `Doctor: ${lastAppointment.doctorName}<br>Time: ${lastAppointment.appointmentTime}<br>Booked at: ${lastAppointment.bookedAt}`;
+                document.getElementById('last-appointment').innerHTML = lastAppointmentText;
+            } else {
+                document.getElementById('last-appointment').innerHTML = "No appointment booked yet.";
+            }
+        }
+
+        // Function to revisit the last appointment alert
+        function revisitLastAppointment() {
+            const lastAppointment = JSON.parse(localStorage.getItem('lastAppointment'));
+
+            if (lastAppointment) {
+                alert(`Revisiting last appointment: \nDoctor: ${lastAppointment.doctorName}\nTime: ${lastAppointment.appointmentTime}`);
+            } else {
+                alert("No previous appointment to revisit.");
+            }
+        }
+
+        // Function to show the reminder notification for the appointment
+        function showReminderNotification() {
+            const lastAppointment = JSON.parse(localStorage.getItem('lastAppointment'));
+
+            if (lastAppointment) {
+                const currentTime = new Date().toLocaleTimeString();
+                if (currentTime === lastAppointment.appointmentTime) {
+                    document.getElementById('appointment-notification').style.display = 'block';
+                    setTimeout(function() {
+                        document.getElementById('appointment-notification').style.display = 'none';
+                    }, 5000);
+                }
+            }
+        }
+
+        // Check for the reminder every minute
+        setInterval(showReminderNotification, 60000);
+
+        // Display the last appointment on page load if available
+        displayLastAppointment();
+    </script>
+</body>
+</html>
